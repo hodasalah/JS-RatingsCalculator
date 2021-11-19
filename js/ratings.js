@@ -7,12 +7,12 @@ function collect_ratings() {
 	let rating = 0;
 	const elements = document.querySelectorAll(".rating");
 	elements.forEach((element) => {
-		rating = element.id.replace("star", "");
-		parseInt(rating);
-		let elementVal = parseInt(element.value);
-		ratings.count += elementVal;
+		let elemID = element.id.replace("star", "");
+		rating = parseInt(elemID);
 
-		ratings.sum += elementVal * rating;
+		ratings.count += parseInt(element.value);
+
+		ratings.sum += parseInt(element.value) * rating;
 	});
 	if (ratings.count !== 0) {
 		ratings.average = sum / count;
